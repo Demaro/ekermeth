@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import Party, Status, Category, Tipo
 
 
-
+"""
 class PartyModelAdmin(admin.ModelAdmin):
 	list_display = ["id", "name", "description", "slug", "createdAt", "updatedAt", "status", "user", "place" ,"address", "location", "eventdate", "category", ]
 	list_display_links = ["user", "status", "category",]
@@ -57,3 +57,5 @@ class TipoModelAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Tipo, TipoModelAdmin)
+
+"""

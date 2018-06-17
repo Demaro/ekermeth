@@ -1,4 +1,4 @@
-from cuentas.models import User
+from cuentas.models import User, Contacto
 from rest_framework.authtoken.models import Token
 from rest_framework import serializers
 from rest_framework.serializers import (
@@ -10,6 +10,7 @@ from rest_framework.serializers import (
     ValidationError,    
     EmailField,
     CharField,
+    IntegerField,
     ValidationError
 )
 from django.db.models import Q
@@ -19,6 +20,13 @@ from django.utils.translation import ugettext_lazy as _
 
 from rest_framework.compat import authenticate
 
+class ContactEmailSendSerializer(ModelSerializer):
+    class Meta: 
+        model = Contacto
+        fields = ('name','email' ,'fono', 'company', 'message')
+
+
+
 class UsuarioSerializer(ModelSerializer):
     class Meta:
         model = User
@@ -27,7 +35,7 @@ class UsuarioSerializer(ModelSerializer):
 
 class UsuarioCrearActualizarSerializer(ModelSerializer):
     email = serializers.EmailField(validators=[UniqueValidator(queryset=User.objects.all(),
-    message=" Ya existe un usuario con este correo", )])
+    message="Ya existe un usuario con este correo", )])
     #email2 = EmailField(label = 'Confirm Email')
     class Meta:
         model = User
@@ -107,11 +115,11 @@ class AuthTokenSerializer(serializers.Serializer):
                 # backend.)
                 if not user:
 
-                    raise serializers.ValidationError({'': 'Contraseña Incorrecta.'})
+                    raise serializers.ValidationError({'w': 'Contraseña Incorrecta.'})
 
             except User.DoesNotExist:
 
-                raise serializers.ValidationError({'': "Correo Electrónico Incorrecto."})
+                raise serializers.ValidationError({'w': "Correo Electrónico Incorrecto."})
         else:
             msg = _('Must include "username" and "password".')
             raise serializers.ValidationError(msg, code='authorization')

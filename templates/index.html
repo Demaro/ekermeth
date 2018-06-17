@@ -1,23 +1,26 @@
-
 {% load static %}
 
-<!doctype html><html><head>
+<!doctype html>
+<html lang="en" class="full-height">
+<head>
   <base href="/"><title>Djangular REST</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="icon" type="image/x-icon" href="{% static 'ang/favicon.ico' %}">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><style type="text/css">body, html {
-      height: 100%;
-    }
-    .app-loading {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
+<link href="{% static 'ang/styles.css' %}" rel="stylesheet"/>
+<style type="text/css">
+
+
+
+  .body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+}
+
 
     .app-loading .spinner {
       height: 200px;
@@ -59,13 +62,44 @@
         stroke-dasharray: 89, 200;
         stroke-dashoffset: -124px;
       }
-    }</style><link href="{% static 'ang/styles.bundle.css' %}" rel="stylesheet"/></head><body><anms-root><div class="app-loading"><div class="logo"></div><svg class="spinner" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div></anms-root><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    }</style>
 
-    ga('create', 'UA-53234284-5', 'auto');
-    ga('send', 'pageview');</script>
-    <script type="text/javascript" src="{% static 'ang/inline.bundle.js' %}"></script>
-    <script type="text/javascript" src="{% static 'ang/polyfills.bundle.js' %}"></script>
-  <script type="text/javascript" src="{% static 'ang/main.bundle.js' %}"></script>
+</head>
+
+    <body class="body">
+       <app-root>
+        <div class="app-loading">
+          <div class="logo"></div>
+          <svg class="spinner" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>
+      </app-root>
+
+
+   
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{% static 'ang/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ang/polyfills.js' %}"></script>
+     <script type="text/javascript" src="{% static 'ang/runtime.js' %}"></script>
+ 
+   <script type="text/javascript" src="{% static 'ang/scripts.js' %}"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"  crossorigin="anonymous"></script>
+
+   <script>
+    new WOW().init();
+
+  </script>
+
+  
+<script>
+    $('.navbar-collapse a').click(function(){
+        $(".navbar-collapse").collapse('hide');
+    });
+</script>
+
+
+

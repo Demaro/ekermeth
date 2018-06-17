@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'cuentas',
     'partys'
+
     
 ]
 
@@ -89,7 +90,7 @@ DATABASES = {
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        #'rest_framework.authentication.SessionAuthentication',
     )
 }
 
@@ -118,6 +119,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'demaromail@gmail.com'
+EMAIL_HOST_PASSWORD = 'deephouse123'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

@@ -46,3 +46,6 @@ class ModuloDetalleSerializer(ModelSerializer):
         model = Modulo
         fields = ('id', 'usuario', 'nombre','subtitulo', 'descripcion', 'img')
 
+
+
+

@@ -7,7 +7,8 @@ from .serializers import (
     UsuarioCrearActualizarSerializer, 
     UsuarioListarSerializer, 
     UsuarioDetalleSerializer,
-    AuthTokenSerializer
+    AuthTokenSerializer,
+    ContactEmailSendSerializer
 )
 
 ######
@@ -34,6 +35,12 @@ from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticate
 #     queryset = User.objects.all()
 #     serializer_class = UsuarioSerializer
     
+class ContactSendEmailApiView(CreateAPIView):
+    serializer_class = ContactEmailSendSerializer
+    permission_classes = [AllowAny]
+
+
+
 
 
 class UsuarioListarAPIView(ListAPIView):
@@ -42,7 +49,7 @@ class UsuarioListarAPIView(ListAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UsuarioListarSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 
 class UsuarioCrearAPIView(CreateAPIView):
@@ -105,7 +112,7 @@ from rest_framework.response import Response
 
 class ObtainAuthToken(APIView):
     throttle_classes = ()
-    permission_classes = ()
+    permission_classes = [AllowAny]
     parser_classes = (parsers.FormParser, parsers.MultiPartParser, parsers.JSONParser,)
     renderer_classes = (renderers.JSONRenderer,)
     serializer_class = AuthTokenSerializer
@@ -142,9 +149,12 @@ class ObtainAuthToken(APIView):
         token, created = Token.objects.get_or_create(user=user)
 
         print(user)
+        print(token)
 
         context = {
             'token': token.key,
+            'name': user.first_name,
+            'email': user.email
            
         }
         

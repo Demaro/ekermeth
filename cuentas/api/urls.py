@@ -9,6 +9,7 @@ from django.urls import path, include
 from .views import (
     UsuarioCrearAPIView,
     # UserAPIViewset,
+    ContactSendEmailApiView,
     UsuarioListarAPIView,
     UsuarioDetalleByIdAPIView,
     UsuarioEditarAPIView,
@@ -18,6 +19,8 @@ from .views import (
 )
 urlpatterns = [
     #url('',include(router.urls)),
+    url(r'^send_email/$', ContactSendEmailApiView.as_view(), name='send_email'),
+
     url(r'^$', UsuarioListarAPIView.as_view(), name='listar'),
     url(r'^registrar/$', UsuarioCrearAPIView.as_view(), name='registrar'),
     url(r'(?P<id>\d+)/editar/$', UsuarioEditarAPIView.as_view(), name = 'editar'),
