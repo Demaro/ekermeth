@@ -19,7 +19,6 @@ from django.urls import path, include
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 from modulos import views
-from rest_framework_jwt.views import obtain_jwt_token
 
 # from rest_framework import routers
 # router = routers.DefaultRouter()
@@ -31,7 +30,6 @@ urlpatterns = [
     # url(r'^api/$',),
     url(r'^api/modulos/', include('modulos.api.urls')),
     url(r'^api/usuarios/', include('cuentas.api.urls')),
-    url(r'^api/auth/token/', obtain_jwt_token),
     # url(r'^.*', TemplateView.as_view(template_name='index.html'), name='inicio'),
     # path('api/',include('modulos.urls')),
     path('api/partys/',include('partys.api.urls')),
