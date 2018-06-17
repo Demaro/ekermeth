@@ -15,7 +15,7 @@ from .views import (
     UsuarioEditarAPIView,
     UsuarioEliminarAPIView,
     UserByEmail,
-   
+    obtain_auth_token
 )
 urlpatterns = [
     #url('',include(router.urls)),
@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^registrar/$', UsuarioCrearAPIView.as_view(), name='registrar'),
     url(r'(?P<id>\d+)/editar/$', UsuarioEditarAPIView.as_view(), name = 'editar'),
     url(r'(?P<id>\d+)/eliminar/$', UsuarioEliminarAPIView.as_view(), name = 'eliminar'),
-    
+    url(r'auth-token/$', obtain_auth_token, name='token'),
     url(r'(?P<id>\d+)/$', UsuarioDetalleByIdAPIView.as_view(), name = 'detalle-id'),
     url(r'(?P<email>.+)/$', UserByEmail.as_view(), name = 'detalle-email'),
    
