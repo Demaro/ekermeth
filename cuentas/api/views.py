@@ -40,16 +40,13 @@ class ContactSendEmailApiView(CreateAPIView):
     permission_classes = [AllowAny]
 
 
-
-
-
 class UsuarioListarAPIView(ListAPIView):
     """
     Serializador para LISTAR TODOS LOS USUARIOS
     """
     queryset = User.objects.all()
     serializer_class = UsuarioListarSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 
 class UsuarioCrearAPIView(CreateAPIView):
