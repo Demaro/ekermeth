@@ -8,7 +8,8 @@ from .serializers import (
     UsuarioListarSerializer, 
     UsuarioDetalleSerializer,
     AuthTokenSerializer,
-    ContactEmailSendSerializer
+    ContactEmailSendSerializer,
+
 )
 
 ######
@@ -101,7 +102,6 @@ class UserByEmail(RetrieveAPIView):
 
 
 
-
 from rest_framework import parsers, renderers
 from rest_framework.compat import coreapi, coreschema
 from rest_framework.authtoken.models import Token
@@ -151,7 +151,8 @@ class ObtainAuthToken(APIView):
         context = {
             'token': token.key,
             'name': user.first_name,
-            'email': user.email
+            'email': user.email,
+            'id': user.id
            
         }
         

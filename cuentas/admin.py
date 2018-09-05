@@ -16,3 +16,5 @@ class ContactoAdmin(admin.ModelAdmin):
         
 
 admin.site.register(Contacto, ContactoAdmin)
+
+

@@ -26,9 +26,6 @@ class ContactEmailSendSerializer(ModelSerializer):
         fields = ('name','email' ,'fono', 'company', 'message')
 
 
-
-
-
 class UsuarioSerializer(ModelSerializer):
     class Meta:
         model = User
@@ -128,3 +125,8 @@ class AuthTokenSerializer(serializers.Serializer):
 
         attrs['user'] = user
         return attrs
+
+
+
+
+

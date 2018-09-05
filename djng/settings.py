@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'modulos',
     'rest_framework.authtoken',
     'cuentas',
-    'partys'
+    'plan_mensual'
+
 
     
 ]
