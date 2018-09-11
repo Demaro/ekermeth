@@ -29,7 +29,6 @@ class PlanMensualSerializer(ModelSerializer):
 		model = Plan_mensual
 		fields = ('id','user','sueldo', 'diario', 'gasto_general', 'date_start', 'total')
 
-
 '''
 class ProductSerializer(ModelSerializer):
 	user = UsuarioSerializer(read_only=True)
@@ -54,32 +53,27 @@ class PlanMensualCrearActualizarSerializer(ModelSerializer):
 	class Meta:
 		model = Plan_mensual
 		fields = [
+			'id',
 			'user',
 			'sueldo',
 			'diario',
 			'gasto_general',
-			'date_start',
 			'total'
 
 		]
 
-	def create(self, validated_data):
-		user = validated_data['user']
-		sueldo = validated_data['sueldo']
-		diario = validated_data['diario']
-		gasto_general = validated_data['gasto_general']
-		date_start = validated_data['date_start']
-		plan_obj = Producto(
-			user     		= user,
-			sueldo 			= sueldo,
-			diario 			= diario,
-			Gasto_general 	= gasto_general,
-			date_start		=	date_start,
-		)
 
-		plan_obj.save()
+class GastoGeneralCreateSerializer(ModelSerializer):
 
-		return validated_data
+	class Meta:
+		model = Gasto_general
+		fields = [
+		'id',
+		'name',
+		'value'
+		]
+
+
 
 
 
