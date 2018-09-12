@@ -25,7 +25,7 @@ class PlanMensualListarAPIView(ListAPIView):
     """
     queryset = Plan_mensual.objects.all()
     serializer_class = PlanMensualSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 
 
@@ -46,7 +46,7 @@ class PlanMensualEditarAPIView(RetrieveUpdateAPIView):
     serializer_class = PlanMensualCrearActualizarSerializer
     queryset = Plan_mensual.objects.all()
     lookup_field = 'user'
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 
 class GastoGeneralListApiView(ListAPIView):
@@ -55,7 +55,7 @@ class GastoGeneralListApiView(ListAPIView):
     """
     serializer_class = GastoGeneralCreateSerializer
     queryset = Gasto_general.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class GastoGeneralCreateApiView(CreateAPIView):
     """
@@ -63,7 +63,7 @@ class GastoGeneralCreateApiView(CreateAPIView):
     """
     serializer_class = GastoGeneralCreateSerializer
     queryset = Gasto_general.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class GastoEditarAPIView(RetrieveUpdateAPIView):
     """
@@ -73,7 +73,7 @@ class GastoEditarAPIView(RetrieveUpdateAPIView):
     serializer_class = GastoGeneralCreateSerializer
     queryset = Gasto_general.objects.all()
     lookup_field = 'id'
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 
 
