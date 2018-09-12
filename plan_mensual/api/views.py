@@ -12,7 +12,7 @@ from rest_framework.generics import (
 )
 
 
-from .serializers import PlanMensualSerializer, PlanMensualCrearActualizarSerializer, GastoGeneralCreateSerializer
+from .serializers import PlanMensualSerializer, PlanMensualCrearActualizarSerializer, GastoGeneralCreateSerializer, PlanMensualByUserSerializer
 from plan_mensual.models import Plan_mensual, Gasto_general
 #
 #PERMISOS
@@ -43,10 +43,10 @@ class PlanMensualEditarAPIView(RetrieveUpdateAPIView):
     Serializador para editar un USUARIO por ID
     """
     
-    serializer_class = PlanMensualCrearActualizarSerializer
+    serializer_class = PlanMensualByUserSerializer
     queryset = Plan_mensual.objects.all()
     lookup_field = 'user'
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 
 class GastoGeneralListApiView(ListAPIView):
@@ -55,7 +55,7 @@ class GastoGeneralListApiView(ListAPIView):
     """
     serializer_class = GastoGeneralCreateSerializer
     queryset = Gasto_general.objects.all()
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 class GastoGeneralCreateApiView(CreateAPIView):
     """
@@ -75,6 +75,16 @@ class GastoEditarAPIView(RetrieveUpdateAPIView):
     lookup_field = 'id'
     permission_classes = [IsAuthenticated]
 
+
+class GastoDeleteAPIView(DestroyAPIView):
+    """
+    Serializador para editar un GASTO por ID
+    """
+    
+    serializer_class = GastoGeneralCreateSerializer
+    queryset = Gasto_general.objects.all()
+    lookup_field = 'id'
+    permission_classes = [AllowAny]
 
 
 
