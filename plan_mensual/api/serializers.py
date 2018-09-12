@@ -46,10 +46,20 @@ class ProductSerializerforCarrito(ModelSerializer):
 
 '''
 
+
+class GastoGeneralCreateSerializer(ModelSerializer):
+
+	class Meta:
+		model = Gasto_general
+		fields = [
+		'id',
+		'name',
+		'value'
+		]
+
+
 class PlanMensualCrearActualizarSerializer(ModelSerializer):
-	#name = serializers.EmailField(validators=[UniqueValidator(queryset=Producto.objects.all(),
-	#message="Ya existe un producto con este correo", )])
-	#email2 = EmailField(label = 'Confirm Email')
+
 	class Meta:
 		model = Plan_mensual
 		fields = [
@@ -60,17 +70,6 @@ class PlanMensualCrearActualizarSerializer(ModelSerializer):
 			'gasto_general',
 			'total'
 
-		]
-
-
-class GastoGeneralCreateSerializer(ModelSerializer):
-
-	class Meta:
-		model = Gasto_general
-		fields = [
-		'id',
-		'name',
-		'value'
 		]
 
 

@@ -25,7 +25,7 @@ class PlanMensualListarAPIView(ListAPIView):
     """
     queryset = Plan_mensual.objects.all()
     serializer_class = PlanMensualSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
 
 
