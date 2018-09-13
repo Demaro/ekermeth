@@ -24,7 +24,10 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_palan(sender, instance=None, created=False, **kwargs):
     if created:
-        Plan_mensual.objects.create(user=instance)
+        obj = Plan_mensual.objects.create(user=instance)
+        obj.gasto_general = [1, 2, 3, 4]
+
+
 
 
 class Contacto(models.Model):
