@@ -78,7 +78,7 @@ class PlanMensualByUserManySerializer(ModelSerializer):
 	class Meta:
 		model = Plan_mensual
 		fields = [
-			'id'
+			'id',
 			'user',
 			'gasto_general',
 
