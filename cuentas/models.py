@@ -25,9 +25,6 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 def create_palan(sender, instance=None, created=False, **kwargs):
     if created:
         obj = Plan_mensual.objects.create(user=instance)
-        obj.gasto_general = [1, 2, 3, 4]
-
-
 
 
 class Contacto(models.Model):
