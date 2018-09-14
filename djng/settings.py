@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':  'd4v6gv0jpgodqi',
         'USER': 'okuaeigjwiowox',
-        'PASSWORD': '4efe317be9393123c6690a3312cf8d68c9364432f7861a8ecb2a4378b57a91f8',
+        'fuckyou',
         'HOST': 'ec2-54-83-50-145.compute-1.amazonaws.com',
         'PORT':      '5432',
     }
@@ -128,7 +128,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'demaromail@gmail.com'
-EMAIL_HOST_PASSWORD = 'futurehouse123'
+EMAIL_HOST_PASSWORD = 'fuckyou'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
