@@ -29,8 +29,8 @@ def create_palan(sender, instance=None, created=False, **kwargs):
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
-def send_email(sender, instance, **kwargs):
-    name = instance.name
+def send_email_register(sender, instance, **kwargs):
+    name = instance.first_name
     email = instance.email
 
     #Enviado a mi correo:
