@@ -81,11 +81,14 @@ WSGI_APPLICATION = 'djng.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':  'd4v6gv0jpgodqi',
+        'USER': 'okuaeigjwiowox',
+        'PASSWORD': '4efe317be9393123c6690a3312cf8d68c9364432f7861a8ecb2a4378b57a91f8',
+        'HOST': 'ec2-54-83-50-145.compute-1.amazonaws.com',
+        'PORT':      '5432',
     }
 }
-
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
