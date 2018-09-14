@@ -21,7 +21,7 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
 
-
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_palan(sender, instance=None, created=False, **kwargs):
     if created:
         obj = Plan_mensual.objects.create(user=instance)
