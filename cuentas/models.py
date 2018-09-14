@@ -27,18 +27,6 @@ def create_palan(sender, instance=None, created=False, **kwargs):
         obj = Plan_mensual.objects.create(user=instance)
 
 
-
-@receiver(post_save, sender=settings.AUTH_USER_MODEL)
-def send_email_register(sender, instance, **kwargs):
-    name = instance.first_name
-    email = instance.email
-
-    #Enviado a mi correo:
-    contact = send_mail(name + '. by: '+ email, 'Usuario registrado!: ' + name + '\n' + '\n',  ['demaromail@gmail.com',] )
-    #Enviado al emisor:
-    contact2 = send_mail('Gracias por unirte a ekermet! :D', 'Recibido! <3', 'demaromail@gmail.com', [email] )
-
-
 class Contacto(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
