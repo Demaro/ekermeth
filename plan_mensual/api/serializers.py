@@ -59,7 +59,7 @@ class GastoGeneralCreateSerializer(ModelSerializer):
 
 
 class PlanMensualByUserSerializer(ModelSerializer):
-	
+	gasto_general = GastoGeneralCreateSerializer(many=True, read_only=True)
 	class Meta:
 		model = Plan_mensual
 		fields = [
@@ -78,7 +78,6 @@ class PlanMensualByUserManySerializer(ModelSerializer):
 	class Meta:
 		model = Plan_mensual
 		fields = [
-			'user',
 			'gasto_general',
 
 		]
