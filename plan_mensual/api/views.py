@@ -56,7 +56,7 @@ class PlanMensualEditar2APIView(RetrieveUpdateAPIView):
     serializer_class = PlanMensualByUserManySerializer
     queryset = Plan_mensual.objects.all()
     lookup_field = 'user'
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class GastoGeneralListApiView(ListAPIView):
     """
