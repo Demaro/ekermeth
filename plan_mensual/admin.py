@@ -14,8 +14,8 @@ class PlanAdmin(admin.ModelAdmin):
 
 
 class GastoGeneralAdmin(admin.ModelAdmin):
-	list_display = ["id", "name", "value"]
-	list_editable = ["name", "value"]
+	list_display = ["id", "name", "value", "if_default"]
+	list_editable = ["name", "value", "if_default"]
 
 	class Meta:
 		model = Gasto_general

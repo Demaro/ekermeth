@@ -18,7 +18,6 @@ class Plan_mensual(models.Model):
 class Gasto_general(models.Model):
     name = models.CharField(max_length=100)
     value = models.IntegerField(blank=True, null=True)
-    #gasto_general = models.CharField(max_length=200, blank=True, null=True)
-    
+    if_default = models.BooleanField(default=False)
     def __str__(self):
         return self.name
