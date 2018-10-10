@@ -55,7 +55,8 @@ class GastoGeneralCreateSerializer(ModelSerializer):
 		'id',
 		'name',
 		'value',
-		'if_default'
+		'if_default',
+		'sobre'
 		]
 
 

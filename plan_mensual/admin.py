@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Plan_mensual, Gasto_general
+from .models import Plan_mensual, Gasto_general, Sobre
 
 class PlanAdmin(admin.ModelAdmin):
     list_display = ["id",  "user", "diario", "date_start", "total",]
@@ -14,7 +14,7 @@ class PlanAdmin(admin.ModelAdmin):
 
 
 class GastoGeneralAdmin(admin.ModelAdmin):
-	list_display = ["id", "name", "value", "if_default"]
+	list_display = ["id", "name", "value", "if_default", "sobre"]
 	list_editable = ["name", "value", "if_default"]
 
 	class Meta:
@@ -22,7 +22,16 @@ class GastoGeneralAdmin(admin.ModelAdmin):
 
         
 
+class SobreAdmin(admin.ModelAdmin):
+	list_display = ["id", "name", "description",]
+	list_editable = ["name", "description"]
+
+	class Meta:
+		model = Sobre
+
 admin.site.register(Plan_mensual, PlanAdmin)
 
 admin.site.register(Gasto_general, GastoGeneralAdmin)
+
+admin.site.register(Sobre, SobreAdmin)
 
