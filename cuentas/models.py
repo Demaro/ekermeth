@@ -50,7 +50,7 @@ def send_email(sender, instance, **kwargs):
     #Enviado a mi correo:
     contact = send_mail(name + '. by: '+ email, message + '\n' + '\n' + 'compañia: ' + company ,email, ['demaromail@gmail.com',] )
     #Enviado al emisor:
-    contact2 = send_mail('Gracias por tu Mensaje! :D', 'Recibido! <3', 'demaromail@gmail.com', [email] )
+    contact2 = send_mail('Gracias por Registrarte! :D', 'Recibido! <3', 'demaromail@gmail.com', [email] )
 
 
 signals.post_save.connect(send_email, sender=Contacto)
