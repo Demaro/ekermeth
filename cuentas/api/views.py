@@ -125,15 +125,6 @@ class ObtainAuthToken(APIView):
                         description="Valid email for authentication",
                     ),
                 ),
-                coreapi.Field(
-                    name="password",
-                    required=True,
-                    location='form',
-                    schema=coreschema.String(
-                        title="Password",
-                        description="Valid password for authentication",
-                    ),
-                ),
             ],
             encoding="application/json",
         )
@@ -145,18 +136,12 @@ class ObtainAuthToken(APIView):
         user = serializer.validated_data['user']
         token, created = Token.objects.get_or_create(user=user)
 
-        print(user)
-        print(token)
-
         context = {
             'token': token.key,
             'name': user.first_name,
             'email': user.email,
-            'id': user.id
-           
+            'id': user.id  
         }
-        
         return Response(context)
-
 
 obtain_auth_token = ObtainAuthToken.as_view()
