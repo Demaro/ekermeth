@@ -11,6 +11,7 @@ class Plan_mensual(models.Model):
 	date_start	=	models.DateTimeField(auto_now_add=True, blank=True)
 	total		=	models.CharField(max_length=100, blank=True, null=True)
 	
+	
 	def __str__(self):
 		return self.user.username
 
@@ -29,6 +30,7 @@ class Gasto_general(models.Model):
 class Sobre(models.Model):
 	name = models.CharField(max_length=100)
 	description = models.CharField(max_length=200)
+
 
 
 	def __str__(self):
