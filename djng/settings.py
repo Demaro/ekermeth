@@ -63,7 +63,7 @@ ROOT_URLCONF = 'djng.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'static/ang'),],
+        'DIRS': [os.path.join(BASE_DIR, 'cuentas/static/ang'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
