@@ -42,16 +42,19 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'cuentas',
-    'plan_mensual'
+    'plan_mensual',
+    'corsheaders',
 
 
     
 ]
 
 MIDDLEWARE = [
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -125,7 +128,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ORIGIN_WHITELIST = (
+    'https://test-ekermet.herokuapp.com/',
 
+)
+
+CORS_URLS_REGEX  =  r ' ^ / api / . * $ '
+
+CORS_ORIGIN_REGEX_WHITELIST = (r'^(https?://)?(\w+\.)?google\.com$', )
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
