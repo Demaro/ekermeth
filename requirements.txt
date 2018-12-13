@@ -8,3 +8,4 @@ psycopg2==2.7.5
 PyJWT==1.6.1
 pytz==2018.4
 static3==0.7.0
+django-cors-headers==2.4.0
