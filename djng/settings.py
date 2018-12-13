@@ -133,7 +133,6 @@ CORS_ORIGIN_WHITELIST = (
 
 )
 
-CORS_URLS_REGEX  =  r ' ^ / api / . * $ '
 
 CORS_ORIGIN_REGEX_WHITELIST = (r'^(https?://)?(\w+\.)?google\.com$', )
 
