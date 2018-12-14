@@ -49,6 +49,25 @@ INSTALLED_APPS = [
     
 ]
 
+
+CORS_ORIGIN_WHITELIST = (
+    'https://test-ekermet.herokuapp.com/',
+    'https://ekermet.herokuapp.com'
+
+)
+
+ALLOWED_HOSTS = [
+'https://test-ekermet.herokuapp.com/',
+'https://ekermet.herokuapp.com'
+
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_REGEX_WHITELIST = (r'^(https?://)?(\w+\.)?google\.com$', )
+
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -127,21 +146,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'https://test-ekermet.herokuapp.com/',
 
-)
-
-ALLOWED_HOSTS = [
-'https://test-ekermet.herokuapp.com/',
-
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ORIGIN_REGEX_WHITELIST = (r'^(https?://)?(\w+\.)?google\.com$', )
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
