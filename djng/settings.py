@@ -49,19 +49,6 @@ INSTALLED_APPS = [
     
 ]
 
-
-CORS_ORIGIN_WHITELIST = (
-    'https://test-ekermet.herokuapp.com/',
-    'https://ekermet.herokuapp.com'
-
-)
-
-ALLOWED_HOSTS = [
-'https://test-ekermet.herokuapp.com/',
-'https://ekermet.herokuapp.com'
-
-]
-
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ORIGIN_ALLOW_ALL = True
